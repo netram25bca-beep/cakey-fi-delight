@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cakey Fi Delight</title>
+
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #fff7f8, #ffe8ef);
+        color: #333;
+    }
+
+    /* ===== HEADER ===== */
+
+    header {
+    background: linear-gradient(135deg, #ff4f7b, #ff8fab, #ffc2d1);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+    box-shadow: 0 6px 20px rgba(255, 79, 123, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: "🍰  🧁  🍓  🍫  🍰";
+    display: block;
+    margin-top: 15px;
+    font-size: 22px;
+    letter-spacing: 12px;
+}
+
+   header h1 {
+    margin: 0;
+    font-size: 44px;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+    header p {
+        margin: 12px 0 0;
+        font-size: 17px;
+    }
+
+    /* ===== MAIN CONTAINER ===== */
+
+    .container {
+        width: 94%;
+        max-width: 1250px;
+        margin: 35px auto;
+    }
+
+    /* ===== WELCOME ===== */
+
+    .welcome {
+        text-align: center;
+        background: white;
+        padding: 30px 20px;
+        border-radius: 18px;
+        margin-bottom: 35px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .welcome h2 {
+        margin-top: 0;
+        color: #ff4f7b;
+        font-size: 28px;
+    }
+
+    .welcome p {
+        color: #666;
+        font-size: 16px;
+    }
+
+    /* ===== PRODUCTS ===== */
+
+    .products-section h2 {
+        text-align: center;
+        color: #ff4f7b;
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 20px;
+}
+
+    .product-card {
+        border: none;
+        border-radius: 18px;
+        padding: 18px;
+        text-align: center;
+        background-color: white;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        overflow: hidden;
+    }
+
+    .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(255, 79, 123, 0.20);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        border-radius: 14px;
+        margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+        margin: 8px 0;
+        font-size: 20px;
+        color: #333;
+    }
+
+    .product-card p {
+        color: #777;
+        min-height: 40px;
+        margin: 8px 0;
+    }
+
+    .product-card h4 {
+        margin: 12px 0;
+        color: #ff4f7b;
+        font-size: 20px;
+    }
+
+    /* ===== BUTTONS ===== */
+
+    button {
+        background: linear-gradient(135deg, #ff4f7b, #ff7598);
+        color: white;
+        border: none;
+        padding: 11px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(255, 79, 123, 0.30);
+    }
+
+    /* ===== CART ===== */
+
+  .cart-box {
+    background: #ffffff;
+    padding: 28px;
+    margin-top: 35px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(255, 79, 123, 0.15);
+    border: 1px solid #ffe0e8;
+}
+
+.cart-box h2 {
+    color: #ff4f7b;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+#cartItems {
+    margin: 20px 0;
+}
+
+#cartItems > div {
+    background: #fff7f8;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    border-left: 5px solid #ff6f91;
+}
+
+#cartItems h3 {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+#cartItems p {
+    margin: 6px 0;
+    color: #666;
+}
+
+#cartItems hr {
+    display: none;
+}
+
+.cart-box > h3 {
+    border-top: 1px solid #eee;
+    padding-top: 18px;
+    margin-top: 20px;
+    color: #333;
+    font-size: 20px;
+}
+
+    /* ===== PAYMENT ===== */
+
+    #paymentBox {
+        display: none;
+        margin-top: 30px;
+        background: white;
+        padding: 35px 25px;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+    }
+
+    #paymentBox h2 {
+        color: #ff4f7b;
+        font-size: 27px;
+    }
+
+    #paymentAmount {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ff4f7b;
+        margin: 10px 0;
+    }
+
+    .demo-qr {
+        width: 180px;
+        height: 180px;
+        margin: 25px auto;
+        background:
+            linear-gradient(45deg, #000 25%, transparent 25%),
+            linear-gradient(-45deg, #000 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #000 75%),
+            linear-gradient(-45deg, transparent 75%, #000 75%);
+        background-size: 30px 30px;
+        background-position: 0 0, 0 15px, 15px -15px, -15px 0;
+        border: 8px solid white;
+        box-shadow: 0 0 0 2px #333;
+    }
+
+    .payment-note {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 20px;
+    }
+
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 768px) {
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        .products {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .product-card img {
+            height: 170px;
+        }
+    }
+
+    @media (max-width: 500px) {
+
+        .container {
+            width: 94%;
+        }
+
+        .products {
+            grid-template-columns: 1fr;
+        }
+
+        .product-card img {
+            height: 220px;
+        }
+
+        .welcome h2 {
+            font-size: 23px;
+        }
+
+        .cart-box {
+            padding: 22px;
+        }
+    }
+</style>
+
+<body>
+
+    <header>
+        <h1>🍰 Cakey Fi Delight</h1>
+        <p>Delicious Cakes & Sweet Treats</p>
+    </header>
+
+    <div class="container">
+
+        <div class="welcome">
+            <h2>Welcome to Cakey Fi Delight!</h2>
+            <p>Order your favourite cakes and enjoy the sweetness.</p>
+        </div>
+        <!-- CAKE PRODUCTS -->
+
+<div class="products-section">
+
+    <h2>🍰 Our Cakes & Treats</h2>
+
+    <div class="products">
+
+        <div class="product-card">
+            <img src="images/chocolate cake.jpeg" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>Rich and delicious chocolate cake</p>
+            <h4>₹800</h4>
+            <button onclick="addToCart(1)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/vanilla cake.jpeg" alt="Vanilla Cake">
+            <h3>Vanilla Cake</h3>
+            <p>Soft and creamy vanilla cake</p>
+            <h4>₹800</h4>
+            <button onclick="addToCart(2)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/simple dream cake.jpeg" alt="Simple Dream Cake">
+            <h3>Simple Dream Cake</h3>
+            <p>Simple and delicious dream cake</p>
+            <h4>₹600</h4>
+            <button onclick="addToCart(3)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/chocolate dream cake.jpeg" alt="Chocolate Dream Cake">
+            <h3>Chocolate Dream Cake</h3>
+            <p>Chocolate lovers' favourite</p>
+            <h4>₹700</h4>
+            <button onclick="addToCart(4)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/nutella dream cake.jpeg" alt="Nutella Dream Cake">
+            <h3>Nutella Dream Cake</h3>
+            <p>Loaded with creamy Nutella flavour</p>
+            <h4>₹750</h4>
+            <button onclick="addToCart(5)">Add to Cart</button>
+        </div>
+
+    </div>
+
+</div>
+
+        <div class="cart-box">
+
+            <h2>🛒 Your Cart</h2>
+
+            <div id="cartItems">
+                <p>Your cart is empty.</p>
+            </div>
+
+            <h3>
+                Total: ₹<span id="cartTotal">0</span>
+            </h3>
+
+            <button onclick="showPayment()">
+                Proceed to Payment
+            </button>
+
+        </div>
+
+        <!-- DEMO PAYMENT -->
+
+        <div id="paymentBox">
+
+            <h2>💳 Demo Payment</h2>
+
+            <p>Amount to Pay:</p>
+
+            <div id="paymentAmount">₹0</div>
+
+            <div class="demo-qr"></div>
+
+            <p>
+                Scan QR Code to make payment
+            </p>
+
+            <p class="payment-note">
+                This is a demo payment for college project presentation.
+            </p>
+
+            <button onclick="completeDemoPayment()">
+                ✅ Payment Done
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
