@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cakey Fi Delight - Login</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #ffd6e5);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background: white;
+            width: 320px;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px #d9a6b7;
+            text-align: center;
+        }
+
+        h1 {
+            color: #c44e7a;
+            font-size: 27px;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #e5b7c8;
+            border-radius: 8px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background: #d85f8c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #message {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+        <h1>🎂 Cakey Fi Delight</h1>
+        <p>Sweet treats, happy moments!</p>
+        <h2>Login to Continue</h2>
+
+        <form id="loginForm">
+            <input type="text" id="name"
+                placeholder="Enter Your Name" required>
+
+            <input type="text" id="mobile"
+                placeholder="Enter Mobile Number" required>
+
+            <button type="submit">LOGIN</button>
+        </form>
+
+        <p id="message"></p>
+        <small>College Project Demo</small>
+    </div>
+
+    <script>
+        document.getElementById("loginForm")
+        .addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+
+            if (name === "" || mobile === "") {
+                document.getElementById("message").textContent =
+                    "Please enter your name and number.";
+                return;
+            }
+
+            sessionStorage.setItem("customerName", name);
+
+            document.getElementById("message").textContent =
+                "Login successful! Welcome, " + name + "!";
+
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 1200);
+        });
+    </script>
+
+</body>
+</html>
