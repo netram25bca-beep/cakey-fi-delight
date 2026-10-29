@@ -7,6 +7,11 @@
     <title>Cakey Fi Delight</title>
 
 </head>
+    <script>
+if (!sessionStorage.getItem("customerName")) {
+    window.location.replace("login.html");
+}
+</script>
 <style>
     * {
         box-sizing: border-box;
